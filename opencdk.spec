@@ -1,13 +1,16 @@
 Summary:	Open Crypto Development Kit
 Summary(pl):	Open Crypto Development Kit
 Name:		opencdk
-Version:	0.2.0
+Version:	0.4.3
 Release:	1
 License:	GPL
 Group:		Libraries
 Source0:	ftp://ftp.gnutls.org/pub/gnutls/opencdk/%{name}-%{version}.tar.gz
 URL:		http://www.gnu.org/software/gnutls/
-BuildRequires:	libgcrypt-devel >= 1.1.5
+BuildRequires:	autoconf >= 2.52
+BuildRequires:	automake
+BuildRequires:	libtool
+BuildRequires:	libgcrypt-devel >= 1.1.12
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -45,14 +48,23 @@ Biblioteka statyczna opencdk.
 %setup -q
 
 %build
+rm -f missing
+%{__libtoolize}
+%{__aclocal}
+%{__autoconf}
+%{__automake}
 %configure
 %{__make}
+%{__make} -C doc
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_aclocaldir}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+install src/opencdk.m4 $RPM_BUILD_ROOT%{_aclocaldir} 
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -62,15 +74,17 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS README THANKS
+%doc AUTHORS README THANKS NEWS ChangeLog
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 
 %files devel
 %defattr(644,root,root,755)
+%doc doc/*.html doc/DETAILS
 %attr(755,root,root) %{_bindir}/*-config
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/lib*.la
 %{_includedir}/*.h
+%{_aclocaldir}/*.m4
 
 %files static
 %defattr(644,root,root,755)
