@@ -67,7 +67,7 @@ install -d $RPM_BUILD_ROOT%{_aclocaldir}
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-install src/opencdk.m4 $RPM_BUILD_ROOT%{_aclocaldir} 
+install src/opencdk.m4 $RPM_BUILD_ROOT%{_aclocaldir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
