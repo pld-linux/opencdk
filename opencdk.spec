@@ -1,7 +1,7 @@
 Summary:	Open Crypto Development Kit
 Summary(pl):	Open Crypto Development Kit
 Name:		opencdk
-Version:	0.4.3
+Version:	0.4.5
 Release:	1
 License:	GPL
 Group:		Libraries
