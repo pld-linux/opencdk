@@ -6,6 +6,7 @@ Release:	1
 License:	GPL
 Group:		Libraries
 Source0:	ftp://ftp.gnutls.org/pub/gnutls/opencdk/%{name}-%{version}.tar.gz
+# Source0-md5:	53e7822ae35d6b391951933e73d3cce0
 URL:		http://www.gnu.org/software/gnutls/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
