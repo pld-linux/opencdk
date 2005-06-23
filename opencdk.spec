@@ -1,13 +1,12 @@
 Summary:	Open Crypto Development Kit
 Summary(pl):	Open Crypto Development Kit
 Name:		opencdk
-Version:	0.5.5
+Version:	0.5.7
 Release:	1
 License:	GPL
 Group:		Libraries
-Source0:	ftp://ftp.gnutls.org/pub/gnutls/opencdk/%{name}-%{version}.tar.bz2
-# Source0-md5:	aaff60107f0153873192ffda00699a96
-Patch0:		%{name}-am18.patch
+Source0:	ftp://ftp.gnutls.org/pub/gnutls/opencdk/%{name}-%{version}.tar.gz
+# Source0-md5:	766560f9ed6c6a64a2820364b1e6065c
 URL:		http://www.gnu.org/software/gnutls/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
@@ -28,6 +27,7 @@ Summary(pl):	Pliki nag³ówkowe i inne do opencdk
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	libgcrypt-devel >= 1.1.94
+Requires:	zlib-devel
 
 %description devel
 Header files etc to develop opencdk applications.
@@ -49,9 +49,6 @@ Biblioteka statyczna opencdk.
 
 %prep
 %setup -q
-%patch0 -p1
-
-rm -f acinclude.m4
 
 %build
 %{__libtoolize}
