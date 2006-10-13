@@ -1,12 +1,12 @@
 Summary:	Open Crypto Development Kit
 Summary(pl):	Open Crypto Development Kit
 Name:		opencdk
-Version:	0.5.9
+Version:	0.5.10
 Release:	1
 License:	GPL
 Group:		Libraries
 Source0:	ftp://ftp.gnutls.org/pub/gnutls/opencdk/%{name}-%{version}.tar.gz
-# Source0-md5:	b692c2dc2cedd1435e2a2ef3f5a2c708
+# Source0-md5:	6c5d37220ac5daec0af110164dcfaf36
 URL:		http://www.gnu.org/software/gnutls/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
@@ -77,17 +77,18 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README THANKS TODO
-%attr(755,root,root) %{_libdir}/lib*.so.*.*
+%attr(755,root,root) %{_libdir}/libopencdk.so.*.*
 
 %files devel
 %defattr(644,root,root,755)
 %doc doc/*.html doc/DETAILS
-%attr(755,root,root) %{_bindir}/*-config
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
-%{_includedir}/*.h
-%{_aclocaldir}/*.m4
+%attr(755,root,root) %{_bindir}/opencdk-config
+%attr(755,root,root) %{_libdir}/libopencdk.so
+%{_libdir}/libopencdk.la
+%{_includedir}/opencdk.h
+%{_aclocaldir}/opencdk.m4
+%{_pkgconfigdir}/opencdk.pc
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libopencdk.a
