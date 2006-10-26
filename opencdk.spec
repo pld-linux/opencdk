@@ -1,17 +1,17 @@
 Summary:	Open Crypto Development Kit
 Summary(pl):	Open Crypto Development Kit
 Name:		opencdk
-Version:	0.5.3
+Version:	0.5.11
 Release:	1
 License:	GPL
 Group:		Libraries
 Source0:	ftp://ftp.gnutls.org/pub/gnutls/opencdk/%{name}-%{version}.tar.gz
-# Source0-md5:	ade80d417486a47e60542d9ee46023b5
+# Source0-md5:	de16f52a7f2215e3df9e81067ebae60d
 URL:		http://www.gnu.org/software/gnutls/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
 BuildRequires:	libtool
-BuildRequires:	libgcrypt-devel >= 1.1.43
+BuildRequires:	libgcrypt-devel >= 1.1.94
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -25,8 +25,9 @@ Biblioteka dostarcza podstawow± obs³ugê formatu OpenPGP.
 Summary:	Header files etc to develop opencdk applications
 Summary(pl):	Pliki nag³ówkowe i inne do opencdk
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
-Requires:	libgcrypt-devel >= 1.1.42
+Requires:	%{name} = %{version}-%{release}
+Requires:	libgcrypt-devel >= 1.1.94
+Requires:	zlib-devel
 
 %description devel
 Header files etc to develop opencdk applications.
@@ -38,7 +39,7 @@ Pliki nag³ówkowe i inne do opencdk.
 Summary:	Static opencdk library
 Summary(pl):	Biblioteka statyczna opencdk
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static opencdk library.
@@ -76,17 +77,18 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README THANKS TODO
-%attr(755,root,root) %{_libdir}/lib*.so.*.*
+%attr(755,root,root) %{_libdir}/libopencdk.so.*.*
 
 %files devel
 %defattr(644,root,root,755)
 %doc doc/*.html doc/DETAILS
-%attr(755,root,root) %{_bindir}/*-config
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
-%{_includedir}/*.h
-%{_aclocaldir}/*.m4
+%attr(755,root,root) %{_bindir}/opencdk-config
+%attr(755,root,root) %{_libdir}/libopencdk.so
+%{_libdir}/libopencdk.la
+%{_includedir}/opencdk.h
+%{_aclocaldir}/opencdk.m4
+%{_pkgconfigdir}/opencdk.pc
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libopencdk.a
