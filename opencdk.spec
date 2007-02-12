@@ -1,5 +1,5 @@
 Summary:	Open Crypto Development Kit
-Summary(pl):	Open Crypto Development Kit
+Summary(pl.UTF-8):   Open Crypto Development Kit
 Name:		opencdk
 Version:	0.5.13
 Release:	1
@@ -18,12 +18,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 This library provides basic parts of the OpenPGP message format.
 
-%description -l pl
-Biblioteka dostarcza podstawow± obs≥ugÍ formatu OpenPGP.
+%description -l pl.UTF-8
+Biblioteka dostarcza podstawowƒÖ obs≈Çugƒô formatu OpenPGP.
 
 %package devel
 Summary:	Header files etc to develop opencdk applications
-Summary(pl):	Pliki nag≥Ûwkowe i inne do opencdk
+Summary(pl.UTF-8):   Pliki nag≈Ç√≥wkowe i inne do opencdk
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	libgcrypt-devel >= 1.1.94
@@ -32,19 +32,19 @@ Requires:	zlib-devel
 %description devel
 Header files etc to develop opencdk applications.
 
-%description devel -l pl
-Pliki nag≥Ûwkowe i inne do opencdk.
+%description devel -l pl.UTF-8
+Pliki nag≈Ç√≥wkowe i inne do opencdk.
 
 %package static
 Summary:	Static opencdk library
-Summary(pl):	Biblioteka statyczna opencdk
+Summary(pl.UTF-8):   Biblioteka statyczna opencdk
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static opencdk library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Biblioteka statyczna opencdk.
 
 %prep
