@@ -1,5 +1,5 @@
 Summary:	Open Crypto Development Kit
-Summary(pl.UTF-8):   Open Crypto Development Kit
+Summary(pl.UTF-8):	Open Crypto Development Kit
 Name:		opencdk
 Version:	0.5.13
 Release:	1
@@ -23,7 +23,7 @@ Biblioteka dostarcza podstawową obsługę formatu OpenPGP.
 
 %package devel
 Summary:	Header files etc to develop opencdk applications
-Summary(pl.UTF-8):   Pliki nagłówkowe i inne do opencdk
+Summary(pl.UTF-8):	Pliki nagłówkowe i inne do opencdk
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	libgcrypt-devel >= 1.1.94
@@ -37,7 +37,7 @@ Pliki nagłówkowe i inne do opencdk.
 
 %package static
 Summary:	Static opencdk library
-Summary(pl.UTF-8):   Biblioteka statyczna opencdk
+Summary(pl.UTF-8):	Biblioteka statyczna opencdk
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
