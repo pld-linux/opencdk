@@ -1,18 +1,19 @@
 Summary:	Open Crypto Development Kit
 Summary(pl.UTF-8):	Open Crypto Development Kit
 Name:		opencdk
-Version:	0.5.13
+Version:	0.6.4
 Release:	1
-License:	GPL
+License:	GPL v2+
 Group:		Libraries
-Source0:	ftp://ftp.gnutls.org/pub/gnutls/opencdk/%{name}-%{version}.tar.gz
-# Source0-md5:	65324874074ba7c67028b93979e6d1d9
+Source0:	ftp://ftp.gnutls.org/pub/gnutls/opencdk/%{name}-%{version}.tar.bz2
+# Source0-md5:	7bfc820bcdc08f0c31f860710368071e
 URL:		http://www.gnu.org/software/gnutls/
-BuildRequires:	autoconf >= 2.60
+BuildRequires:	autoconf >= 2.61
 BuildRequires:	automake >= 1:1.10
 BuildRequires:	libtool
-BuildRequires:	libgcrypt-devel >= 1.1.94
+BuildRequires:	libgcrypt-devel >= 1.2.2
 BuildRequires:	zlib-devel
+Requires:	libgcrypt >= 1.2.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -26,7 +27,7 @@ Summary:	Header files etc to develop opencdk applications
 Summary(pl.UTF-8):	Pliki nagłówkowe i inne do opencdk
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	libgcrypt-devel >= 1.1.94
+Requires:	libgcrypt-devel >= 1.2.2
 Requires:	zlib-devel
 
 %description devel
@@ -52,7 +53,7 @@ Biblioteka statyczna opencdk.
 
 %build
 %{__libtoolize}
-%{__aclocal} -I m4 -I lib/m4
+%{__aclocal} -I m4
 %{__autoconf}
 %{__autoheader}
 %{__automake}
@@ -81,7 +82,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%doc doc/*.html doc/DETAILS
+%doc doc/*.html
 %attr(755,root,root) %{_bindir}/opencdk-config
 %attr(755,root,root) %{_libdir}/libopencdk.so
 %{_libdir}/libopencdk.la
