@@ -2,7 +2,7 @@ Summary:	Open Crypto Development Kit
 Summary(pl.UTF-8):	Open Crypto Development Kit
 Name:		opencdk
 Version:	0.6.6
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		Libraries
 Source0:	ftp://ftp.gnutls.org/pub/gnutls/opencdk/%{name}-%{version}.tar.bz2
